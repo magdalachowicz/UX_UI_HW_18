@@ -11,15 +11,16 @@ body {
 }
 
 .nav {
+    position: absolute;
+    right: 2%;
+    top: 100px;
+    word-spacing: 30px;
+    text-decoration: none;
     font-family: 'Nunito';
     font-style: semi-bold;
     font-size: 18px;
     display: flex;
     color: #373435;
-    position: absolute;
-    right: 2%;
-    top: 100px;
-    word-spacing: 30px;
 }
 
 ul {
@@ -38,29 +39,38 @@ h2 {
     font-size: 36px;
     color: #373435;
     text-align: right;
-    position: absolute;
-    right: 2%;
-    top: 150px;
 }
 
-.logo {
-    margin-right: auto;
-    margin-left: 1%;
-    margin-top: -150px;
-    float: left;
+.workGrid {
+    display: grid;
+    grid-template-rows: 750px 750px;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: column;
+    grid-template-areas: 
+    "ChefsyImage Chefsy"
+    "BFImage BlackFret";
 }
 
-.about {
+p {
     font-family: 'Bree Serif';
     font-style: normal;
     font-size: 20px;
     color: #373435;
     text-align: right;
-    width: 500px;
-    position: absolute;
-    top: 250px;
-    right: 2%;
+}
 
+.Chefsy {
+    width: 750px;
+    position: absolute;
+    top: 175px;
+    right: 10%;
+}
+
+.BlackFret {
+    width: 750px;
+    position: absolute;
+    top: 700px;
+    right: 10%;
 }
 
 .button {
@@ -70,28 +80,42 @@ h2 {
     padding: 10px 40px;
     text-align: center;
     text-decoration: none;
-    display:inline-block;
     font-family: 'Bree Serif';
     font-size: 20px;
     color: #EFF0E9;
     cursor: pointer;
-    position: absolute;
-    top: 550px;
-    right: 2%;
+    float: right;
 }
 
-#design {
-    display: flex;
-    justify-content: flex-end;
-    align-content: flex-end;
+#ChefsyImage {
+    float: left;
     position: absolute;
-    top: 575px;
-    right: 2%;
+    left: 5%;
+    top: 150px;
+}
+
+#BFImage {
+    float: left;
+    position: absolute;
+    left: 10%;
+    top: 725px;
 }
 
 .footer {
     display:inline-block;
     position: absolute;
     right: 5%;
-    top: 750px;
+    top: 1200px;
+}
+
+@media only screen and (max-width: 600px) {
+    .workGrid {
+        max-width: 600px;
+        grid-template-rows: 250px 250px;
+        grid-template-areas: 
+        "Chefsy"
+        "ChefsyImage"
+        "BlackFret"
+        "BFImage";
+    }
 }
